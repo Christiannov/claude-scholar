@@ -111,15 +111,15 @@ Maintainable ML project structure for experiment code:
 
 Statistical analysis and visualization of experimental results:
 
-**Tools**: `results-analysis` skill + `data-analyst` agent
+**Tools**: `results-analysis` skill + `results-report` skill + `data-analyst` agent
 
 **Process**:
 - **Data Processing**: Automated cleaning and preprocessing of experiment logs
 - **Statistical Testing**: t-test, ANOVA, Wilcoxon signed-rank → validate significance
-- **Visualization**: matplotlib/seaborn integration → publication-ready figures (line plots, bar charts, heatmaps)
+- **Visualization**: strict scientific figure generation → publication-ready figures with interpretation guidance
 - **Ablation Studies**: Systematic component analysis → understand contribution of each part
 
-**Command**: `/analyze-results <experiment_dir>` → generates analysis report with figures and statistics
+**Command**: `/analyze-results <experiment_dir>` → generates a strict analysis bundle (analysis report, stats appendix, figure catalog, figures)
 
 #### 4. Paper Writing
 
@@ -259,12 +259,18 @@ claude-scholar/
 │   │       ├── method-selection-guide.md
 │   │       └── research-planning.md
 │   │
-│   ├── results-analysis/         # Experiment analysis: statistics, visualization, ablation
+│   ├── results-analysis/         # Strict experiment analysis: statistics, figures, ablation
 │   │   └── references/
 │   │       ├── statistical-methods.md      # t-test, ANOVA, Wilcoxon
-│   │       ├── visualization-best-practices.md  # matplotlib/seaborn
-│   │       ├── results-writing-guide.md    # Writing results sections
+│   │       ├── statistical-reporting.md    # reporting completeness
+│   │       ├── figure-interpretation.md    # explain figures with evidence
 │   │       └── common-pitfalls.md          # Common analysis mistakes
+│   │
+│   ├── results-report/           # Post-experiment summary reports and retrospectives
+│   │   └── references/
+│   │       ├── report-structure.md
+│   │       ├── report-naming.md
+│   │       └── decision-oriented-analysis.md
 │   │
 │   ├── review-response/          # Systematic rebuttal writing
 │   │   └── references/
@@ -386,7 +392,8 @@ claude-scholar/
 
 **Research Workflow:**
 - `research-ideation` - Research startup: 5W1H brainstorming, literature review, gap analysis
-- `results-analysis` - Experiment analysis: statistical testing, visualization, ablation studies
+- `results-analysis` - Strict experiment analysis: rigorous statistics, scientific figures, ablation studies
+- `results-report` - Post-experiment summary reports: retrospection, decision support, Obsidian report notes
 - `review-response` - Systematic rebuttal writing with tone management
 - `paper-self-review` - 6-item quality checklist for paper self-assessment
 - `post-acceptance` - Conference preparation: presentations, posters, promotion
@@ -488,7 +495,7 @@ bash /tmp/claude-scholar/scripts/setup.sh
 
 The script merges skills/commands/agents/rules/hooks into your existing `~/.claude`, and adds hooks/mcpServers/enabledPlugins to your `settings.json` (auto-backup to `settings.json.bak`). Your env and permissions are untouched.
 
-**Includes**: 46 skills, 32 top-level commands, 16 agents, 5 hooks, and project rules.
+**Includes**: 47 skills, 32 top-level commands, 16 agents, 5 hooks, and project rules.
 
 #### Option 2: Minimal Installation
 
@@ -504,6 +511,7 @@ cp /tmp/claude-scholar/hooks/*.js ~/.claude/hooks/
 cp -r /tmp/claude-scholar/skills/ml-paper-writing ~/.claude/skills/
 cp -r /tmp/claude-scholar/skills/research-ideation ~/.claude/skills/
 cp -r /tmp/claude-scholar/skills/results-analysis ~/.claude/skills/
+cp -r /tmp/claude-scholar/skills/results-report ~/.claude/skills/
 cp -r /tmp/claude-scholar/skills/review-response ~/.claude/skills/
 cp -r /tmp/claude-scholar/skills/writing-anti-ai ~/.claude/skills/
 cp -r /tmp/claude-scholar/skills/git-workflow ~/.claude/skills/
@@ -515,7 +523,7 @@ rm -rf /tmp/claude-scholar
 
 **Post-install**: Merge hooks config into your `settings.json` — see `settings.json.template` for the required hooks entries.
 
-**Includes**: 5 hooks, 7 core skills (complete research workflow + essential development).
+**Includes**: 5 hooks, 8 core skills (complete research workflow + essential development).
 
 #### Option 3: Selective Installation
 

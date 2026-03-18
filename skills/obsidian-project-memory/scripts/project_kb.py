@@ -328,7 +328,7 @@ def build_codebase_overview(repo_root: Path) -> str:
         '## Suggested knowledge targets',
         '',
         '- Link experiment scripts to `Experiments/` notes.',
-        '- Link evaluation scripts and generated reports to `Results/` notes.',
+        '- Link evaluation scripts and generated reports to canonical `Results/` notes and `Results/Reports/` when a full retrospective exists.',
         '- Keep planning and TODO updates synchronized with `01-Plan.md` and `Daily/`.',
     ])
     return '\n'.join(lines) + '\n'
@@ -397,7 +397,7 @@ updated: {now_iso()}
 # {project_title}
 
 ## Mission
-- Keep the project grounded in a small set of research-facing folders: Knowledge, Papers, Experiments, Results, Writing, and Daily.
+- Keep the project grounded in a small set of research-facing folders: Knowledge, Papers, Experiments, Results, Results/Reports, Writing, and Daily.
 
 ## Core Index
 - [[01-Plan]]
@@ -408,6 +408,7 @@ updated: {now_iso()}
 - [[Knowledge/Analysis-Pipeline-Modes]]
 - [[Experiments]]
 - [[Results]]
+- `Results/Reports/`
 - [[Papers]]
 - [[Writing]]
 
@@ -419,6 +420,7 @@ updated: {now_iso()}
 - `Papers/`
 - `Experiments/`
 - `Results/`
+- `Results/Reports/`
 - `Writing/`
 - `Daily/`
 '''
@@ -533,7 +535,7 @@ def bootstrap_project(repo_root: Path, vault_path: Path, project_name: str | Non
     project_root = vault_path / 'Research' / project_slug
     archive_root = vault_path / 'Archive'
     project_root.mkdir(parents=True, exist_ok=True)
-    for rel in ['Knowledge', 'Papers', 'Experiments', 'Results', 'Writing', 'Daily', 'Archive']:
+    for rel in ['Knowledge', 'Papers', 'Experiments', 'Results', 'Results/Reports', 'Writing', 'Daily', 'Archive']:
         (project_root / rel).mkdir(parents=True, exist_ok=True)
 
     ensure_note(project_root / '00-Hub.md', hub_note(project_slug, project_title))

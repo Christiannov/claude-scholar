@@ -105,7 +105,7 @@ function collectSkills() {
 // Categorize skills into groups
 function categorizeSkills(skills) {
   const categories = {
-    'Research & Writing': /research|paper|writing|citation|review-response|rebuttal|post-acceptance|doc-coauthoring|latex|daily-paper|ml-paper|results-analysis|brainstorm/,
+    'Research & Writing': /research|paper|writing|citation|review-response|rebuttal|post-acceptance|doc-coauthoring|latex|daily-paper|ml-paper|results-analysis|results-report|brainstorm/,
     'Development': /coding|git|code-review|bug|architecture|verification|tdd|uv-package|webapp-testing|kaggle|driven-development|development-branch|planning|dispatching|executing|using-superpowers/,
     'Plugin Dev': /skill-|command-|hook-|mcp-|agent-identifier|command-name/,
     'Design & UI': /frontend|ui-ux|web-design|canvas|brand|theme|algorithmic-art|slack-gif|figma/,
@@ -157,7 +157,8 @@ const KEYWORD_SKILL_MAP = [
   { keywords: /\b(kaggle|competition)\b|竞赛/i, skills: ['kaggle-learner'] },
   { keywords: /\b(citation|reference.*check)\b|引用|引文|参考文献/i, skills: ['citation-verification'] },
   { keywords: /\b(latex.*template|overleaf)\b|模板整理/i, skills: ['latex-conference-template-organizer'] },
-  { keywords: /\b(ablation)\b|实验结果|results.*analysis|统计检验|消融实验/i, skills: ['results-analysis'] },
+  { keywords: /\b(ablation)\b|实验结果|results.*analysis|统计检验|消融实验|科学绘图|实验统计/i, skills: ['results-analysis'] },
+  { keywords: /\b(experiment.?report|results.?report|retrospective|wrap.?up)\b|实验报告|实验总结|实验复盘|结果总结/i, skills: ['results-report'] },
   { keywords: /\b(poster|presentation|promote)\b|海报|演讲|推广/i, skills: ['post-acceptance'] },
   { keywords: /\b(plan|planning)\b|规划|计划/i, skills: ['planning-with-files'] },
   { keywords: /\b(verify|verification)\b|验证/i, skills: ['verification-loop'] },

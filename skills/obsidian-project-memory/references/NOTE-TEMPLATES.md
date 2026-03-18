@@ -83,6 +83,57 @@ Keep templates lightweight. Use only the sections that are useful.
 - ...
 ```
 
+## Results Report Note
+
+```markdown
+---
+type: results-report
+date: YYYY-MM-DD
+experiment_line: example-line
+round: 1
+purpose: transfer-summary
+status: active
+source_artifacts:
+  - analysis-output/analysis-report.md
+linked_experiments:
+  - Experiments/Example.md
+linked_results:
+  - Results/Example-Result.md
+---
+
+# Example Line / Round 1 / transfer-summary / YYYY-MM-DD
+
+## Executive Summary
+- ...
+
+## Experiment Identity and Decision Context
+- ...
+
+## Setup and Evaluation Protocol
+- ...
+
+## Main Findings
+- ...
+
+## Statistical Validation
+- ...
+
+## Figure-by-Figure Interpretation
+- ...
+
+## Failure Cases / Negative Results / Limitations
+- ...
+
+## What Changed Our Belief
+- ...
+
+## Next Actions
+- ...
+
+## Artifact and Reproducibility Index
+- ...
+```
+
 ## Paper Note
 
 ```markdown

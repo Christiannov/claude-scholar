@@ -42,8 +42,17 @@ Use this command when a new Markdown file or folder should be absorbed into the 
 - literature summary / related work / reading note -> `Papers/`
 - experiment design / ablation plan / runbook -> `Experiments/`
 - stable findings / interpreted analysis -> `Results/`
-- draft section / report / slide material -> `Writing/`
+- internal experiment summary report -> `Results/Reports/`
+- manuscript draft / slide material / rebuttal text -> `Writing/`
 - temporary memo / meeting raw notes / scratch ideas -> `Daily/`
+
+## Results report naming
+
+If the note is an internal experiment summary report, prefer:
+
+```text
+Results/Reports/YYYY-MM-DD--{experiment-line}--r{round}--{purpose}.md
+```
 
 ## Final response
 

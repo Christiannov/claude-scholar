@@ -72,7 +72,7 @@
 |------|---------|------|
 | 1. 研究构思 | `research-ideation` skill + `literature-reviewer` agent + Zotero MCP | `/research-init`, `/zotero-review`, `/zotero-notes` |
 | 2. ML 项目开发 | `architecture-design` skill + `code-reviewer` agent | `/plan`, `/commit`, `/tdd` |
-| 3. 实验分析 | `results-analysis` skill + `data-analyst` agent | `/analyze-results` |
+| 3. 实验分析 | `results-analysis` skill + `results-report` skill + `data-analyst` agent | `/analyze-results` |
 | 4. 论文写作 | `ml-paper-writing` skill + `paper-miner` agent | - |
 | 5. 论文自审 | `paper-self-review` skill | - |
 | 6. 投稿与 Rebuttal | `review-response` skill + `rebuttal-writer` agent | `/rebuttal` |
@@ -95,12 +95,13 @@
 
 ---
 
-## 技能目录（46 skills）
+## 技能目录（47 skills）
 
-### 🔬 研究与分析 (4 skills)
+### 🔬 研究与分析 (5 skills)
 
 - **research-ideation**: 研究构思启动（5W1H、文献综述、Gap 分析、研究问题制定、Zotero 自动集成）
-- **results-analysis**: 实验结果分析（统计检验、可视化、消融实验）
+- **results-analysis**: 严格实验分析（严谨统计、科研绘图、消融实验）
+- **results-report**: 完整实验总结报告（复盘、决策支持、Obsidian 结果报告）
 - **citation-verification**: 引文验证（多层验证：格式→API→信息→内容）
 - **daily-paper-generator**: 每日论文生成器，用于研究追踪
 

@@ -54,6 +54,7 @@ Default answer: **summarize first, then route**.
 
 - likely classification: `result`
 - if it contains a durable conclusion with evidence -> promote to `Results/`
+- if it is a full internal experiment summary report -> promote to `Results/Reports/` using the stable naming contract
 - if it is still exploratory -> stage in `Daily/` or merge into the existing experiment note first
 
 ### New meeting note

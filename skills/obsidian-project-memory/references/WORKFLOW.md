@@ -21,7 +21,7 @@ Bootstrap only when the repository is a strong research-project candidate and no
 python3 scripts/project_kb.py bootstrap --cwd "$PWD" --vault-path "$OBSIDIAN_VAULT_PATH"
 ```
 
-Bootstrap should create only the compact schema from `SCHEMA.md`.
+Bootstrap should create only the compact schema from `SCHEMA.md`, including `Results/Reports/` for internal experiment reports.
 
 ## 3. Daily or repo-driven sync
 
@@ -56,20 +56,20 @@ When the vault lacks background or context, do not extend the script first.
 Instead:
 1. ask an agent to read the most informative project sources,
 2. synthesize project-level knowledge,
-3. write durable notes back into `Knowledge/`, `Experiments/`, `Results/`, or `Papers/`.
+3. write durable notes back into `Knowledge/`, `Experiments/`, `Results/`, `Results/Reports/`, or `Papers/`.
 
 ## 5. Advance along the main research path
 
 For substantive research turns, prefer advancing knowledge along this path:
 
-```
+```text
 Papers -> Experiments -> Results -> Writing
 ```
 
 Typical progression:
 - new paper understanding -> update `Papers/` and decide whether an experiment note should absorb a new hypothesis, baseline, or evaluation rule
 - experiment planning or execution -> update `Experiments/` and decide what evidence would justify a result note
-- stable finding -> update `Results/` and decide which writing note should absorb the claim next
+- stable finding -> update `Results/` and decide whether a round or batch retrospective should be written under `Results/Reports/`
 - draft or review work -> update `Writing/` and keep links back to supporting results and papers
 
 Do not treat these folders as isolated silos. The default durable workflow is to move knowledge forward across them when the turn supports it.
@@ -82,6 +82,7 @@ Examples:
 - small engineering change -> `Daily/` plus project memory
 - new experiment design -> `Experiments/`
 - new result interpretation -> `Results/`
+- new internal experiment retrospective -> `Results/Reports/`
 - new project framing -> `Knowledge/`
 - new paper note -> `Papers/`
 
@@ -99,7 +100,7 @@ Use this sequence:
 
 Examples:
 - new `plan/new_idea.md` -> usually summarize first, then update `01-Plan.md` or `Knowledge/Research-Questions.md`
-- a complete experiment summary -> may be promoted to `Experiments/` or `Results/`
+- a complete experiment summary -> usually promote to `Results/Reports/`, and update `Results/` if a stable conclusion is now supported
 - a scratch meeting memo -> usually stage in `Daily/`
 
 `project_kb.py` may manage state around this process, but it does not decide promote vs merge.

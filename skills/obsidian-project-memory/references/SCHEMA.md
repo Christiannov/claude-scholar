@@ -15,6 +15,7 @@ Research/{project-slug}/
   Papers/
   Experiments/
   Results/
+    Reports/
   Writing/
   Daily/
   Archive/
@@ -27,7 +28,8 @@ Research/{project-slug}/
 - `Knowledge/` — stable project understanding such as background, research questions, method survey, data protocol, source inventory
 - `Papers/` — paper notes, literature summaries, related-work assets
 - `Experiments/` — experiment designs, runbooks, ablations, mechanism studies
-- `Results/` — durable findings, diagnostics, figure/table indexes, cross-experiment conclusions
+- `Results/` — canonical durable findings, diagnostics, figure/table indexes, cross-experiment conclusions
+- `Results/Reports/` — internal experiment round reports and batch retrospectives with stable naming
 - `Writing/` — paper drafting, slides, proposal text, rebuttal material
 - `Daily/` — daily logs, lightweight sync queue, scratch notes, meeting fragments
 - `Archive/` — inactive or historical material that should not stay in the main working surface
@@ -39,6 +41,7 @@ Research/{project-slug}/
 - `paper`
 - `experiment`
 - `result`
+- `results-report`
 - `synthesis`
 - `meta`
 - `writing`

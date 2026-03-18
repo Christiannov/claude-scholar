@@ -72,7 +72,7 @@ Ideation → ML Development → Experiment Analysis → Paper Writing → Self-R
 |-------|-----------|----------|
 | 1. Research Ideation | `research-ideation` skill + `literature-reviewer` agent + Zotero MCP | `/research-init`, `/zotero-review`, `/zotero-notes` |
 | 2. ML Project Dev | `architecture-design` skill + `code-reviewer` agent | `/plan`, `/commit`, `/tdd` |
-| 3. Experiment Analysis | `results-analysis` skill + `data-analyst` agent | `/analyze-results` |
+| 3. Experiment Analysis | `results-analysis` skill + `results-report` skill + `data-analyst` agent | `/analyze-results` |
 | 4. Paper Writing | `ml-paper-writing` skill + `paper-miner` agent | - |
 | 5. Self-Review | `paper-self-review` skill | - |
 | 6. Submission & Rebuttal | `review-response` skill + `rebuttal-writer` agent | `/rebuttal` |
@@ -95,12 +95,13 @@ Ideation → ML Development → Experiment Analysis → Paper Writing → Self-R
 
 ---
 
-## Skills Directory (46 skills)
+## Skills Directory (47 skills)
 
-### 🔬 Research & Analysis (4 skills)
+### 🔬 Research & Analysis (5 skills)
 
 - **research-ideation**: Research startup (5W1H, literature review, gap analysis, research question formulation, Zotero integration)
-- **results-analysis**: Experiment result analysis (statistical tests, visualization, ablation studies)
+- **results-analysis**: Strict experiment analysis (rigorous statistics, scientific figures, ablation studies)
+- **results-report**: Complete post-experiment summary reporting (retrospection, decision support, Obsidian results reports)
 - **citation-verification**: Citation verification (multi-layer: format→API→info→content)
 - **daily-paper-generator**: Daily paper generator for research tracking
 

@@ -18,6 +18,7 @@ Prefer this skill when working inside a repository that:
 - Write only **durable research knowledge** into a **small vault structure**.
 - Do **not** require MCP, API keys, REST plugins, or `.base` artifacts.
 - Do not depend on `.canvas` globally, but allow literature workflows to maintain `Maps/literature.canvas` as a default literature graph artifact.
+- Treat internal experiment summary reports as **durable result-facing notes** under `Results/Reports/`, not as `Writing/` notes.
 
 ## Default vault structure
 
@@ -31,6 +32,7 @@ Research/{project-slug}/
   Papers/
   Experiments/
   Results/
+    Reports/
   Writing/
   Daily/
   Archive/
@@ -96,6 +98,7 @@ Default path for substantive research work:
 - `Papers/` -> extract reusable ideas, baselines, and project relevance
 - `Experiments/` -> turn those into testable hypotheses, runbooks, or ablations
 - `Results/` -> promote stable findings with evidence and interpretation
+- `Results/Reports/` -> store one round or one batch's internal experiment report when a complete retrospective has been written
 - `Writing/` -> externalize durable claims into reviews, proposals, drafts, slides, or rebuttal notes
 
 Use `Daily/` as chronology and staging, not the final home for durable research knowledge.
@@ -132,6 +135,9 @@ Then write only the durable note that matches the bucket:
 - `daily` -> `Daily/`
 - `project-structure` -> usually `Knowledge/Project-Overview.md` or `Knowledge/Source-Inventory.md`
 
+Internal experiment round reports should default to:
+- `Results/Reports/YYYY-MM-DD--{experiment-line}--r{round}--{purpose}.md`
+
 Read [references/NOTE-TEMPLATES.md](references/NOTE-TEMPLATES.md) when a note needs a stable shape.
 
 ## Knowledge CRUD rules
@@ -149,20 +155,22 @@ Treat the vault as a small set of **canonical notes** plus supporting daily cont
 - For new Markdown files, default to **summarize first, then route**:
   - promote directly only when the file is already stable and self-contained,
   - otherwise merge into an existing canonical note or stage it in `Daily/`.
+- If the new durable object is a full internal experiment report, store it under `Results/Reports/` and link the matching `Experiments/` and canonical `Results/` notes.
 
 ### Read
 
 - Query narrowly first:
   - broad project questions -> `00-Hub.md` + key `Knowledge/` notes,
   - active work questions -> `01-Plan.md` + today's `Daily/` + project memory,
-  - specific experiment/result/paper questions -> the matching canonical note first.
+  - specific experiment/result/paper questions -> the matching canonical note first,
+  - specific internal experiment retrospective -> the matching note in `Results/Reports/` first.
 - Use agent synthesis only when the answer spans multiple durable sources or still depends on repo material after reading canonical notes.
 
 ### Update
 
 - Prefer **updating** an existing canonical note over creating a sibling note.
 - Treat raw material as input, not as a final vault object.
-- Allow fast append-only logging in `Daily/`, but keep durable knowledge in `Knowledge/`, `Papers/`, `Experiments/`, `Results/`, or `Writing/`.
+- Allow fast append-only logging in `Daily/`, but keep durable knowledge in `Knowledge/`, `Papers/`, `Experiments/`, `Results/`, `Results/Reports/`, or `Writing/`.
 
 ### Delete
 
