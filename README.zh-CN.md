@@ -181,7 +181,7 @@ cp rules/agents.md ~/.claude/rules/
 /plugin install claude-scholar@claude-scholar
 ```
 
-自动加载所有 skills、commands、agents 和 hooks。
+自动加载所有 skills、commands、agents 和 hooks。安装时可选择作用范围：user（所有项目）或 project（单个项目）。
 
 **第二步：安装 Rules（必须）**
 
@@ -189,8 +189,14 @@ Claude Code 插件无法自动分发 rules，需要手动安装：
 
 ```bash
 git clone https://github.com/Galaxy-Dawn/claude-scholar.git /tmp/claude-scholar
+
+# 用户级（所有项目生效）
 mkdir -p ~/.claude/rules
 cp /tmp/claude-scholar/rules/*.md ~/.claude/rules/
+
+# 或项目级（仅当前项目生效）
+mkdir -p .claude/rules
+cp /tmp/claude-scholar/rules/*.md .claude/rules/
 ```
 
 > **注意**：插件安装不会配置 `settings.json`（MCP 服务器、环境变量等）。如需 Zotero MCP 或其他集成，请参阅[集成能力](#集成能力)部分手动设置。

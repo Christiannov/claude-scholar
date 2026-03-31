@@ -181,7 +181,7 @@ cp rules/agents.md ~/.claude/rules/
 /plugin install claude-scholar@claude-scholar
 ```
 
-This auto-loads all skills, commands, agents, and hooks.
+This auto-loads all skills, commands, agents, and hooks. During installation, you can choose the scope: user (all projects) or project (single project).
 
 **Step 2: Install Rules (Required)**
 
@@ -189,8 +189,14 @@ Claude Code plugins cannot distribute rules automatically. Install them manually
 
 ```bash
 git clone https://github.com/Galaxy-Dawn/claude-scholar.git /tmp/claude-scholar
+
+# User-level (all projects)
 mkdir -p ~/.claude/rules
 cp /tmp/claude-scholar/rules/*.md ~/.claude/rules/
+
+# Or project-level (current project only)
+mkdir -p .claude/rules
+cp /tmp/claude-scholar/rules/*.md .claude/rules/
 ```
 
 > **Note**: Plugin installation does not configure `settings.json` (MCP servers, env vars). If you need Zotero MCP or other integrations, see the [Integrations](#integrations) section for manual setup.
