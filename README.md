@@ -48,6 +48,7 @@
 | [Why Claude Scholar](#why-claude-scholar) | Understand the project positioning and target use cases. |
 | [Core Workflow](#core-workflow) | See the end-to-end research pipeline from ideation to publication. |
 | [Quick Start](#quick-start) | Install Claude Scholar in full, minimal, or selective mode. |
+| [Getting Started Scenarios](#getting-started-scenarios) | See a few realistic first-use scenarios after installation. |
 | [Integrations](#integrations) | Learn how Zotero and Obsidian fit into the workflow. |
 | [Primary Workflows](#primary-workflows) | Browse the main research and development workflows. |
 | [Supporting Workflows](#supporting-workflows) | See the background systems that strengthen the main workflow. |
@@ -169,6 +170,59 @@ cp rules/agents.md ~/.claude/rules/
 ```
 
 **Post-install**: selective/manual install does **not** auto-merge `settings.json`; copy only the hooks or MCP entries you actually want from `settings.json.template`. If you already have your own `~/.claude/CLAUDE.md` or `~/.claude/CLAUDE.zh-CN.md`, merge the relevant sections from this repo's Claude files into yours instead of blindly overwriting them.
+
+## Getting Started Scenarios
+
+After installation, the simplest way to begin is to describe your task in natural language. You do not need to memorize the whole system first. Below are a few realistic starting points.
+
+### 1. Start a New Research Topic
+**You can say:**
+> Help me start research on [your topic]. I want a literature-grounded plan, the key open questions, and the next concrete steps.
+
+**What Claude Scholar will typically help with:**
+- clarify the topic and narrow the research question,
+- identify promising literature directions,
+- suggest an initial plan or hypothesis list,
+- optionally route the work into Zotero or Obsidian if you use them.
+
+### 2. Review a Zotero Collection
+**You can say:**
+> Review my Zotero collection on brain foundation models and summarize the main directions, gaps, and promising next steps.
+
+**Typical output:**
+- paper grouping by theme,
+- a short literature synthesis,
+- gap analysis,
+- candidate research directions worth pursuing next.
+
+### 3. Analyze Finished Experiment Results
+**You can say:**
+> Analyze the results in this experiment folder, check what changed across runs, and write a decision-oriented summary.
+
+**Typical output:**
+- metric comparison,
+- ablation or error-analysis suggestions,
+- a result summary that highlights what is solid, what is weak, and what to run next.
+
+### 4. Draft a Paper or Rebuttal Section
+**You can say:**
+> Help me draft the related work section for this project based on the current findings and paper notes.
+
+or:
+
+> Help me write a rebuttal draft for these reviewer comments.
+
+**Typical output:**
+- a structured section draft,
+- improved argument flow,
+- clearer claims and evidence mapping,
+- follow-up points that still need support or verification.
+
+### Practical Notes
+- Start with one concrete task, not a vague request for "everything."
+- If you already maintain your own local `CLAUDE.md` files, merge the Claude Scholar sections you want into them instead of assuming sidecar files apply automatically.
+- Zotero and Obsidian are optional, but they become much more useful when you want durable literature notes or project memory rather than one-off chat output.
+
 
 ## Platform Support
 
