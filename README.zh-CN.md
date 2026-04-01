@@ -172,6 +172,35 @@ cp rules/agents.md ~/.claude/rules/
 
 **安装后**：选择性/手动安装**不会自动合并** `settings.json`；请按需从 `settings.json.template` 复制你需要的 hooks 或 MCP 条目。如果你已经有自己的 `~/.claude/CLAUDE.md` 或 `~/.claude/CLAUDE.zh-CN.md`，也请把仓库提供的相关内容按需 merge 到你的文件里，而不是直接覆盖。
 
+### 选项 4：插件市场安装
+
+**第一步：安装插件**
+
+```bash
+/plugin marketplace add Galaxy-Dawn/claude-scholar
+/plugin install claude-scholar@claude-scholar
+```
+
+自动加载所有 skills、commands、agents 和 hooks。安装时可选择作用范围：user（所有项目）或 project（单个项目）。
+
+**第二步：安装 Rules（必须）**
+
+Claude Code 插件无法自动分发 rules，需要手动安装：
+
+```bash
+git clone https://github.com/Galaxy-Dawn/claude-scholar.git /tmp/claude-scholar
+
+# 用户级（所有项目生效）
+mkdir -p ~/.claude/rules
+cp /tmp/claude-scholar/rules/*.md ~/.claude/rules/
+
+# 或项目级（仅当前项目生效）
+mkdir -p .claude/rules
+cp /tmp/claude-scholar/rules/*.md .claude/rules/
+```
+
+**安装后**：插件安装**不会**自动加载 `CLAUDE.md` 或配置 `settings.json`；如果你已经有自己的 `~/.claude/CLAUDE.md` 或 `~/.claude/CLAUDE.zh-CN.md`，也请把仓库提供的相关内容按需 merge 到你的文件里，而不是假设插件会自动应用。如需 Zotero MCP 或其他集成，请参阅[集成能力](#集成能力)部分手动设置。
+
 ## 上手场景
 
 安装完成后，最简单的上手方式就是直接用自然语言描述你的任务，不需要先把整套系统全部背下来。下面给几种最常见、也最实用的起步场景。
@@ -220,10 +249,9 @@ cp rules/agents.md ~/.claude/rules/
 - 还需要补验证或补材料的点。
 
 ### 使用建议
-- 先从一个具体任务开始，而不是一上来让系统“把所有事情都做了”。
+- 先从一个具体任务开始，而不是一上来让系统”把所有事情都做了”。
 - 如果你已经有自己的本地 `CLAUDE.md` 文件，请把你需要的 Claude Scholar 内容按需 merge 进去，不要假设 sidecar 文件会自动生效。
 - Zotero 和 Obsidian 都不是强制的，但如果你希望得到 durable literature notes 或 project memory，而不是一次性聊天输出，它们会非常有帮助。
-
 
 ## 平台支持
 
